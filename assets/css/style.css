@@ -1,0 +1,63 @@
+/* Phần chung----------------------------------- */
+
+/* ban đầu cho toàn bộ nguồn có padding và
+margin, box-sizing tự động tính toán kích thước */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+ /* tác động lên toàn bộ html font chữ */
+html{
+    font-family: Verdana,sans-seri;
+}
+
+
+/* phần header -----------------------------------*/
+
+#header{
+    height: 46.5px;
+    background-color: #000;
+
+}
+
+
+
+
+
+
+
+#slider{
+    background-color: #333;
+    height: 600px;
+}
+
+/* phần content */
+#content{
+
+}
+
+    #about{
+
+    }
+
+
+    #tour{
+
+    }
+
+    #contact{
+
+    }
+
+    #image{
+
+    }
+
+    #footer{
+
+    }
+/* phần footer dưới cùng */
+#footer{
+
+}
