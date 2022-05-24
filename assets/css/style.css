@@ -15,12 +15,54 @@ html{
 
 /* phần header -----------------------------------*/
 
+/* đặt độ cao và màu cho thanh header */
 #header{
     height: 46.5px;
     background-color: #000;
 
 }
 
+#nav{
+
+}
+
+/* đặt toàn bộ chữ trong thẻ li con của ID nav
+dạng inline - một hàng; kiểu block-đặt được
+kích thước */
+#nav li{
+    display: inline-block;
+}
+
+/* - chỉnh màu đen chữ trong thẻ a - con li;
+ li con nav
+ - bỏ gạch chân của thẻ a (mặc định gạch chân)
+ - đặt căm giữa chữ với head với chiều cao chữ
+   bằng chiều cao header 
+ - Padding các chữ trong thẻ a trên dưới = 0
+   trái phải = 24px*/
+#nav li a{
+    color:#fff;
+    text-decoration: none;
+    line-height: 46.5px;
+    padding: 0 24px;
+    display: inline-block;
+}
+
+/* hover a để di chuột vào chuyển màu lý do 
+hover li là khi di chuyển xuống thẻ con của 
+a thì hover với thẻ a vẫn còn 
+hover:
+- màu chữ thẻ a từ trắng sang đen
+- màu nền thẻ a từ đen sang xám*/
+#nav li:hover a{
+    color: #000;
+    background-color: #ccc;
+}
+
+/* tạm ẩn thẻ trong subnav, xử lý nav trước */
+#nav .subnav{
+    display: none;
+}
 
 
 
