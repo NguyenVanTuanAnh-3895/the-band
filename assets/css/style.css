@@ -21,6 +21,14 @@ html{
     background-color: #000;
 
 }
+#nav{
+    /* vì thẻ ul của nav là block
+    kế thừa toàn bộ bề ngang màn hình mà nó nằm,
+    bây giờ sửa lại là inline-block. để nó chiếm
+    đúng độ dài của chữ mà thẻ ul chưa thôi
+    vì ul nằm trong nav nên ta css cho nav */
+    display: inline-block;
+}
 
 #nav, .subnav{
     list-style-type: none;
@@ -89,13 +97,41 @@ hover:
     /* list-style-type: none; đã được xử lý tại thẻ #nav, .subnav */ 
 }
 
+/* sau khi đặt icon ngay sau more, cần css cho icon nhỏ lại, đặt thêm 1 class là av-around-down để sau này thay icon không cần CSS thêm cả icon đó vì đã có nav-around-down làm thay */
+#nav .nav-around-down{
+    font-size: 10px;
+}
+
 #nav .subnav a{
     color: #000;
     padding: 0 14px; /* padding cho toàn bộ thẻ a cấp1 của .subnav cho tụt sang bên 1 chút cho giống trang web */
     line-height: 30px; /*đặt độ rộng chiều cao nhỏ lại cho thẻ con của more, chiều cao này giống đặt chiều cao của thẻ a con cấp 1 của li, con 1 của #nav*/
 }
 
+/* vì thẻ search-btn là div, tính chất block
+kế thừa hoàn toàn chiều ngang, nên ta thêm 1 thuộc tính
+float: right|left (tìm hiểu thêm) để kéo font search
+về bên phải, 
+- do font-search nhỏ nên tăng line-height
+- padding 2 bên font cho icon tách ra cho dề nhìn 
+*/
+#header .search-btn{
+    float: right;
+    line-height: 46.5px;
+    padding: 0 12.8px;
+}
 
+#header .search-icon{
+    color: #fff;
+    font-size: 20px;
+}
+
+#header .search-btn:hover{
+    color: #fff;
+    background-color:#f44336;
+    cursor: pointer; /*thay đổi cuisor thành hình bàn tay khi di vào
+    vì nguyên tắc nút search phải bấm được */
+}
 
 
 #slider{
