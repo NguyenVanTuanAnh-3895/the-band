@@ -22,15 +22,25 @@ html{
 
 }
 
-#nav{
+#nav, .subnav{
+    list-style-type: none;
+}
 
+#nav > li{
+    display: inline-block;
 }
 
 /* đặt toàn bộ chữ trong thẻ li con của ID nav
 dạng inline - một hàng; kiểu block-đặt được
 kích thước */
 #nav li{
-    display: inline-block;
+
+    position: relative;
+}
+
+#nav > li > a{
+    color:#fff;
+     text-transform: uppercase; /*chỉnh sửa thẻ a cấp 1 thành chữ hoa */
 }
 
 /* - chỉnh màu đen chữ trong thẻ a - con li;
@@ -41,11 +51,11 @@ kích thước */
  - Padding các chữ trong thẻ a trên dưới = 0
    trái phải = 24px*/
 #nav li a{
-    color:#fff;
+    /* color:#fff; */
     text-decoration: none;
     line-height: 46.5px;
     padding: 0 24px;
-    display: inline-block;
+    display: block;
 }
 
 /* hover a để di chuột vào chuyển màu lý do 
@@ -54,24 +64,43 @@ a thì hover với thẻ a vẫn còn
 hover:
 - màu chữ thẻ a từ trắng sang đen
 - màu nền thẻ a từ đen sang xám*/
-#nav li:hover a{
+#nav > li:hover > a,
+#nav .subnav li:hover a{
     color: #000;
     background-color: #ccc;
 }
 
-/* tạm ẩn thẻ trong subnav, xử lý nav trước */
-#nav .subnav{
-    display: none;
+/* hover vào li mà li ấy lại chứa con .subnav */
+#nav li:hover .subnav{
+    display: block;
 }
 
+/* tạm ẩn thẻ trong subnav, xử lý nav trước */
+#nav .subnav{
+    display: none;  /*ẩn các thẻ a trong subnav*/
+    position: absolute;
+    /* ------- */
+    top: 100%; /*2 giá trị này đặt cho thẻ con subnav vị trí của nó, top 100% định nghĩa chiều cao box subnav là = chiều cao của "more" tức là bằng 46.5px, cần xem kỹ lại bài position */
+    left: 0;
+    /* ------- */
+    background-color: #fff;
+    box-shadow: 0 0 10px 1px #888;
+    min-width: 150px; /*thẻ đặt chiều ngang thấp nhất của thẻ, sau này chiều dài dài hơn nó sẽ tự động dài ra*/
+    /* list-style-type: none; đã được xử lý tại thẻ #nav, .subnav */ 
+}
 
+#nav .subnav a{
+    color: #000;
+    padding: 0 14px; /* padding cho toàn bộ thẻ a cấp1 của .subnav cho tụt sang bên 1 chút cho giống trang web */
+    line-height: 30px; /*đặt độ rộng chiều cao nhỏ lại cho thẻ con của more, chiều cao này giống đặt chiều cao của thẻ a con cấp 1 của li, con 1 của #nav*/
+}
 
 
 
 
 #slider{
-    background-color: #333;
-    height: 600px;
+    /* background-color: #333;
+    height: 600px; */
 }
 
 /* phần content */
