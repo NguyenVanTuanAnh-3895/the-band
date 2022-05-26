@@ -13,7 +13,7 @@ html{
 }
 
 
-/* phần header -----------------------------------*/
+/* Begin: phần header -----------------------------------*/
 
 /* đặt độ cao và màu cho thanh header */
 #header{
@@ -25,6 +25,18 @@ html{
     right: 0;
     left: 0;
     top: 0;
+
+    /* giải thích thêm: dòng này viết khi hoàn thành bài slider. 
+    phần cưới vidieo bài slider
+    khi thêm position cho mục slider
+    và cho phần content nằm trên của slider
+    thì phần header với thuộc tính position
+    là fixel có thể nối lên hoặc chìm xuống
+    ta sẽ dùng z-index bằng 1: z-index:1;
+    có thể thay thế tăng hoặc giảm 0,1,2 
+    cho tới khi nào lớp mà ta muốn nổi hoặc
+    chìm tùy ý */
+    z-index: 1;
 }
 #nav{
     /* vì thẻ ul của nav là block
@@ -137,16 +149,81 @@ về bên phải,
     cursor: pointer; /*thay đổi cuisor thành hình bàn tay khi di vào
     vì nguyên tắc nút search phải bấm được */
 }
+/* End phần header------------------------ */
 
-
+/* begin Slider------------------------- */
 #slider{
-    background-color: green;
-    height: 60px; 
     margin-top: 46.5px;
+    /* đặt kích thước padding chiều ngang 
+    của thẻ là 50%.
+    hiểu rằng, 50% ở đây là 50% của chính nó
+    tỉ lệ lúc này là 1:2 với chiều ngang bằng
+    nửa chiều dài. Nhằm phù hợp với yêu cầu đề
+    bài ảnh của trang web đang clone tỉ lệ 1:2 */
+    /* thêm nữa: ta thay vì nhúng ảnh với SRC
+    thì sẽ dùng background-imgae; thuộc tính này
+    sẽ có thể đổ nền ảnh tính từ lớp padding
+    đọc kỹ lại bài background-image trên w3school */
+    padding-top: 50%;
+    /* background-image: url(/assets/img/slider/slider1.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; 
+    tất cả thuộc tính trên được thay thế
+    bằng 1 thuộc tính dưới*/
+    background: url('/assets/img/slider/slider1.jpg') top center / cover no-repeat;
+    position: relative;
 }
+
+#slider .text-content{
+    position: absolute; /* chỉ định rằng position này phụ thuộc vào releative của #slider*/
+    color: #fff; /* màu trắng */
+    bottom: 47px; /* chỉ định rằng thẻ này cách mép dưới của thẻ releative là 47px,. chỉ định độ cao của chữ newyork, xem kỹ bài position */
+    /* begin cách 1 */
+    left: 50%; /* chỉ rằng mép chữ cái đầu tiên của thẻ sẽ nằm chính giữa của releative */
+    transform: translateX(-50%); /* chưa hiểu lắm, cần google. chức năng để lùi thẻ lại một nửa độ dài của chữ bên trong thẻ. giúp chữ trong thẻ nằm tại vị trí trung tâm  */
+    /* end cách 1 */
+    text-align: center; /* căn chỉnh chữ nằm ở trung tâm không gian mà chữ đó chiếm */
+
+    /* begin cách 2 */
+/* ngoài ra còn có cách cho chiều ngang mà chữ nó chiếm
+chiếm toàn bộ khung, giống với header, cho chiều
+ngang của tất cả thẻ a chứa chữ thẻ  bằng 46.5
+để nó chiếm cả chiều cao cảu header để chữ nằm giữa
+code:
+    width:100%
+Vẫn giữ nguyên tex-align, chỉ thay thế left;transform*/
+/* end cách 2 */
+
+/* begin cách 3 */
+/* dựa vào thuộc tính position của absolute với releative
+ta cho left = 0; right = 0 để chữ 2 bên dính vào */
+/* end cách 3 */
+
+/* khi nào dùng cách nào? cách nào dễ thì dùng, 
+biết nhiều cách thì tăng khả năng ứng biến */
+
+
+}
+
+#slider .text-heading{
+    font-weight: 500; /* độ dày của font chữ, từ 100-500*/
+    font-size: 24px; /* chỉnh lại kích thước font cho giống trang gốc*/
+}
+
+#slider .text-description{
+    font-size: 15px;
+    padding-top: 25px;
+
+}
+
+
+/* End Slider------------------------------ */
+
 
 /* phần content */
 #content{
+    height: 500px;
 
 }
 
