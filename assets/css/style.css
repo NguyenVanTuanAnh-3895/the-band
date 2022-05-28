@@ -22,6 +22,11 @@ margin, box-sizing tự động tính toán kích thước */
 html{
     font-family: Verdana,sans-seri;
 }
+/* xem kỹ giải thích tại thẻ #conten .member-item
+có cả video */
+.clear{
+    clear: both;
+}
 
 
 /* Begin: phần header -----------------------------------*/
@@ -232,11 +237,12 @@ biết nhiều cách thì tăng khả năng ứng biến */
 /* End Slider------------------------------ */
 
 
-/* phần content */
+/* begin content------------------------------- */
 #content{
 
 }
-
+/* begin about----------------------------- */
+/* begin about-selection--------------------- */
 .content-selection{
     /* đặt chiều cao là 800px theo gốc cả nội dung trong content-selection */
     width: 800px; 
@@ -279,8 +285,73 @@ biết nhiều cách thì tăng khả năng ứng biến */
     /* điều chỉnh khoảng cách các dòng chữ bằng line-height. thường là giá trị tuyệt đối. với tiếng anh là 14px, tiếng việt là 16px*/
     /* 1.4 ở đây là 1.4 * font-size:15px */
     line-height: 1.4;
+}
+/* end about-selection------------------- */
+/* begin about-member-------------------- */
+#content .member-list{
+    margin-top: 48px;
+}
+#content .member-item{
+    /* khi dùng thẻ div nhóm 3 member-item lại với
+    nhau thì sẽ nằm trên 3 hàng, bản chất thẻ
+    div có tính chất block, có nhiều cách để khắc
+    phục vấn đề này, trong đó có cách dùng 
+    float:left, kéo cả 3 ông về biên phái bên
+    trái đề nằm hết trên 1 hàng, tạm thời cứ hiểu
+    như vậy đã */
+    /* ---- */
+    /* vấn đề khi sử dụng float: 
+    https://youtu.be/_sF4fWuE0iM?t=674 
+    nếu thẻ cha dùng float, tất cả cac thẻ con
+    kế thừa lại, thì các thẻ con float sẽ "chui ra
+    mặt phẳng khác, có 2 cách khắc phục
+    c1: overflow: hiden: thuộc tính này giúp thẻ cha căng ra và ôm hết thẻ con
+    c2: cear:both -> cách 2 yêu cầu phải css thuộc tính clear với một thẻ div, chi tiết xem clip
+    vì clear dùng chung cho cả trang nên đặt vị trí đầu/chung;*/
+    /* thẻ div clear tại html sẽ đặt bên trong thẻ cha */
+    float: left;
+    /* vì member-item sẽ kế thừa lại chiều ngang 
+    của member-list, member list kế thừa toàn bộ
+    chiều ngang của about-selection
+    nhìn vào web clone, ta thấy 3 ảnh căn đều vị
+    trí của about-selection.
+    vậy căn đều 3 ông tại vị trí memeber-list(cũng
+    là ông about-selection  */
+    /* width: căn chiều ngang  mỗi item cách
+    nhau X% độ dài của thẻ chứa nó, cụ thể là
+    thẻ member-item
+    - vậy muốn căn đều cả 3 thì chia 100/3=33.333*/
+    /* còn một cách khác là dùng hàm chia calc*/
+    /* width: calc(100%/3) */
+    width: 33.33333333%;
+    /* căn giữa cả 2 thẻ con member-name và
+    member-img */
+    text-align: center;
+
 
 }
+#content .member-name{
+    font-size: 15px;
+    /* text-align: center; ko cần thiết, đưa lên
+    thẻ member-item căn cả 2*/
+}
+#content .member-img{
+    /* dùng với 1 thuộc tính width hoặc height
+    sẽ chỉnh kích thước anh 1 trục, trục còn lại
+    tự động tỉ lệ */
+    width: 154px;
+    margin-top: 15px;
+    /* bo góc ảnh */
+    border-radius: 4px;
+    /* lúc này chữ ko căn giữa, nếu
+    text-align: center; 
+    thì ko được, nên đưa lên hẳn thẻ member-item
+    để căn giữa cả 2 */
+}
+
+
+/* end about-member------------------------- */
+
 /* phần footer dưới cùng */
 #footer{
 
