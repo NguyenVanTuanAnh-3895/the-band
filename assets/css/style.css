@@ -1,3 +1,14 @@
+
+
+/* 1. từ ngoài vào trong
+   2. từ trên xuống dưới
+   3. từ tổng quan đến chi tiết */
+
+/* 1. vị trí
+   2. Kích thước (weight/height)
+   3. màu sắc
+   4. kiểu dáng (kiểu chữ, hình tròn hình vuông... */
+
 /* Phần chung----------------------------------- */
 
 /* ban đầu cho toàn bộ nguồn có padding và
@@ -223,30 +234,53 @@ biết nhiều cách thì tăng khả năng ứng biến */
 
 /* phần content */
 #content{
-    height: 500px;
 
 }
 
-    #about{
+.content-selection{
+    /* đặt chiều cao là 800px theo gốc cả nội dung trong content-selection */
+    width: 800px; 
+    /* đẩy sang trái/phải 1 khoảng auto cho nội dung chính giữa */
+    margin-left: auto;
+    margin-right: auto;
+    /* đẩy padding khối này trên dưới 64px */
+    padding: 64px 0;
+}
 
-    }
+#content .selection-heading{
+    /* căn giữa chữ */
+    text-align: center;
+    /* font-size */
+    font-size: 30px;
+    /* chỉnh độ mỏng đậm chữ*/
+    font-weight: 500;
+    /* chỉnh chữ cách xa: THE BAND -> T H E   B A N*/
+    letter-spacing: 4px;
 
+}
 
-    #tour{
+#content .selection-sub-heading{
+    /* căn giữa chữ */
+    text-align: center;
+    /* font-size:brower:16px */
+    font: 15px;
+    margin-top: 25px;
+    /* phong cách của font, italic là chữ nghiêng */
+    font-style: italic;
+    /* mờ sub-heading: có thể chọn màu mờ đi, hoặc dùng opacity, giá trị từ 0-1 */
+    opacity: 0.6;
+}
 
-    }
+#content .about-text{
+    margin-top: 15px;
+    font-size: 15px;
+    /* căn chỉnh chữ đều ở 2 bên giống word*/
+    text-align: justify;
+    /* điều chỉnh khoảng cách các dòng chữ bằng line-height. thường là giá trị tuyệt đối. với tiếng anh là 14px, tiếng việt là 16px*/
+    /* 1.4 ở đây là 1.4 * font-size:15px */
+    line-height: 1.4;
 
-    #contact{
-
-    }
-
-    #image{
-
-    }
-
-    #footer{
-
-    }
+}
 /* phần footer dưới cùng */
 #footer{
 
