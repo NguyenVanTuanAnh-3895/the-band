@@ -71,11 +71,7 @@
                         <p class="member-name">name</p>
                         <img src="/assets/img/band/member1.jpg" alt="name" class="member-img">
                     </div>
-                    <!-- thẻ clear này giúp căng thẻ cha list
-                    để ôm hết thẻ con để xác định kích cỡ
-                    xử lý vấn đề thẻ con bị chui ra mặt phẳng
-                    khác 
-                    css: .clear{clear: both;}-->
+                    <!-- fix attribute float:left -->
                     <div class="clear"></div> 
                 </div>
             <!-- thẻ contecnt-selection ôm cả member-list để member-list kế thừa lại các đặc tính đã cài cho content-selection, giúp nội dung hiển thị theo ý muốn (giới hạn bên trong content-selection) -->
@@ -90,15 +86,46 @@
                     <h2 class="selection-heading text-white">TOUR DATES</h2>
                     <p class="selection-sub-heading text-white">Remember to book your tickets!</p>
 
-                <ul class="tickets-list">
-                    <li>September <span class="sold-out">Sold out</span></li>
-                    <li>October <span class="sold-out">Sold out</span></li>
-                    <li>November <spand class="quantity">3</spand></li>
-                </ul>
+                    <ul class="tickets-list">
+                        <li>September <span class="sold-out">Sold out</span></li>
+                        <li>October <span class="sold-out">Sold out</span></li>
+                        <li>November <spand class="quantity">3</spand></li>
+                    </ul>
+                    <!-- begin places -->
+                    <div class="places-list">
+                        <div class="place-item">
+                            <img src="/assets/img/places/place1.jpg" alt="new york" class="place-img">
+                            <div class="place-body">
+                                <h3 class="place-heading">New York</h3>
+                                <p class="place-time">Fri 27 Nov 2016</p>
+                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
+                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                            </div>
+                        </div>
+                        <div class="place-item">
+                            <img src="/assets/img/places/place2.jpg" alt="new york" class="place-img">
+                            <div class="place-body">
+                                <h3 class="place-heading">Paris</h3>
+                                <p class="place-time">Sat 28 Nov 2016</p>
+                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
+                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                            </div>
+                        </div>
+                        <div class="place-item">
+                            <img src="/assets/img/places/place3.jpg" alt="new york" class="place-img">
+                            <div class="place-body">
+                                <h3 class="place-heading">San Francisco</h3>
+                                <p class="place-time">Sun 29 Nov 2016</p>
+                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
+                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- end places -->
                 </div>
-            <!-- thẻ tour-section ôm cả tickets-list để tickets-list kế thừa lại các đặc tính đã cài cho content-selection, giúp nội dung hiển thị theo ý muốn (giới hạn bên trong content-selection) -->
             </div>
-        <!-- end tour -->
+            <!-- end tour -->
             <!-- begin contact -->
             <div class="content-selection">
                 <h2 class="selection-heading">CONTACT</h2>

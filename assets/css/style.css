@@ -10,13 +10,13 @@
    4. kiểu dáng (kiểu chữ, hình tròn hình vuông... */
 
 /* Phần chung----------------------------------- */
-
+/* begin reset Universal CSS */
 /* ban đầu cho toàn bộ nguồn có padding và
 margin, box-sizing tự động tính toán kích thước */
 *{
     padding: 0;
     margin: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
  /* tác động lên toàn bộ html font chữ */
 html{
@@ -30,7 +30,7 @@ có cả video */
 .text-white{
     color: #fff !important;
 }
-
+/* end reset Universal CSS */
 
 /* Begin: phần header -----------------------------------*/
 
@@ -394,8 +394,66 @@ biết nhiều cách thì tăng khả năng ứng biến */
 }
 
 /* end content tour */
+/* begin places */
+.places-list{
+    /* padding-top: 32px; */
+    /* margin-left: -8px;
+    margin-right: -8px; */
+    margin: 32px -8px 48px;
 
+}
 
+.place-item{
+    float: left;
+    width: 33.3333%;
+    padding: 0 8px;
+
+}
+
+.place-img{
+    width: 100%;
+    display: block;
+}
+.place-img:hover{
+    opacity: 0.6;
+}
+
+.place-body{
+    background-color: #fff;
+    padding: 16px;
+    font-size: 15px;
+
+}
+
+.place-heading{
+    font-size: 15px;
+    font-weight: 550;
+
+}
+
+.place-time{
+    padding-top: 15px;
+    color: #757575;
+}
+
+.place-desc{
+    padding-top: 15px;
+    line-height: 1.4;
+}
+
+.place-buy-btn{
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 10px 10px;
+    display: inline-block;
+    margin-top: 15px;
+}
+.place-buy-btn:hover{
+    color: #000;
+    background-color: #ccc;
+}
+/* end places */
 /* phần footer dưới cùng */
 #footer{
 
