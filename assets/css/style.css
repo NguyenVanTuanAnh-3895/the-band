@@ -27,6 +27,9 @@ có cả video */
 .clear{
     clear: both;
 }
+.text-white{
+    color: #fff !important;
+}
 
 
 /* Begin: phần header -----------------------------------*/
@@ -348,9 +351,50 @@ biết nhiều cách thì tăng khả năng ứng biến */
     thì ko được, nên đưa lên hẳn thẻ member-item
     để căn giữa cả 2 */
 }
-
-
 /* end about-member------------------------- */
+
+/* begin content tour*/
+/* đặt màu cho toàn bộ thẻ tour */
+.tour-section{
+    background-color: #000;
+}
+
+/* đặt background cho 3 thẻ ul */
+.tickets-list{
+    background-color: #fff; 
+    margin-top: 40px    ;
+}
+/* đặt các kiểu dáng cho từng thẻ li */
+.tickets-list li{
+    color: #757575;
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+}
+/* đặt các kiểu dáng cho từng thẻ sold out */
+.tickets-list .sold-out{
+    background-color: #f44336;
+    color: #fff;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+/* đặt các kiểu dáng cho thẻ quantity */
+.tickets-list .quantity{
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin: -3px 24px 0 0;
+
+}
+
+/* end content tour */
+
 
 /* phần footer dưới cùng */
 #footer{
