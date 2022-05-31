@@ -99,7 +99,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                                <button class="btn place-buy-btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
@@ -108,7 +108,7 @@
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                                <button class="btn place-buy-btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
@@ -117,7 +117,7 @@
                                 <h3 class="place-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <a href="#" class="place-buy-btn">Buy Tickets</a>
+                                <button class="btn place-buy-btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -138,6 +138,89 @@
 
         </div>
     </div>
+    <!-- begin modal -->
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <!-- close button -->
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+            <!-- header modal -->
+            <div class="modal-header">
+                <i class="ti-bag modal-heading-icon"></i>
+                Tickets
+            </div>
 
+            <!-- body modal -->
+            <div class="modal-body">
+                <!-- dùng thẻ header để có "for" nhắm vào thẻ div -->
+                <!-- label 1 -->
+                <label for="tickets-quantity" class="modal-label">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input id="tickets-quantity" type="text" class="modal-input" placeholder="How many?">
+                <!-- label 2 -->
+                <label for="tickets-email" class="modal-label">
+                    <i class="ti-user"></i>
+                    Send To
+                </label>
+                <input id = "tickets-email" type="email" class="modal-input" placeholder="Enter email...">
+
+                <!-- pay button -->
+                <button id="buy-tickets">
+                    Pay <i class="ti-check"></i>
+                </button>
+            </div>
+            <!-- label 2 -->
+
+            <!-- footer with "needhelp?" -->
+            <footer class="modal-footer">
+                <p class="modal-help">Need <a href="#">help?</a></p>
+            </footer>
+        </div>
+    </div>
+    <!-- end modal -->
+
+    <Script>
+        // tạo 1 hằng với tên là buyBtns ("s" biểu thị cho số nhiều, lấy cả 3 nút) document: đại diện cho trang web, muốn lấy nội dung nào đều / phải đi qua docu /querySelectorALL: lấy tất cả các class trùng với class mà // truyền vào đây ()
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        // tạo 1 hằng khác, lấy 1 giá trị class mà thôi, cụ thể là class open, mục đích để truyền vào js để js thêm hoặc xóa đi cái open trong class modal them open: mở modal ; xóa open: đóng modal
+        const modal = document.querySelector('.js-modal')
+        // tương tự
+        const modalClose = document.querySelector('.js-modal-close')
+        //tạo hằng ngăn nổi bọt
+        const modalContainer = document.querySelector('.js-modal-container')
+
+        // hàm hiện modal
+        function showBuyTickets() {
+            // alert("một hai ba bốn nắm")
+            //trong js cung cấp 1 cách quản lý class là "classList"//mục đích lấy ra các class bên trong của class trước đó, ví dụ//modal.classList -> quản lý  các class trong modal//modal.classList.add('open'): thêm vào class open vào thẻ// chứa class modal// trước khi chạy mã: <div class = "modal">// sau khi chạy mã: <div class = "modal open"> 
+            modal.classList.add('open')
+        }
+        // tạo 1 vòng lặp, tạo ra hằng khác (ko có "s" đại diện cho// từng nút). // of buyBtns nghĩa là chạy hết số biến trong buyBtns
+        // lắng nghe 1 trong 3 nút click
+        for (const buyBtn of buyBtns){
+            // Lắng nghe từng sự kiện xảy ra trên từng nút buyBtn // sự kiện ở giá trị thứ nhất: "click"// giá trị thứ 2, hàm để xử lý khi sự kiện click xảy ra // thì làm gì, thì hàm showBuyTickets() sẽ được gọi, và// code trong showBuyTickets() sẽ được thực thi
+            buyBtn.addEventListener('click',showBuyTickets)
+        }
+
+        //hàm tắt modal
+        function CloseBuyTickets() {
+            modal.classList.remove('open')
+        }
+        //  lắng nghe 1 nút x click close
+        modalClose.addEventListener('click', CloseBuyTickets)
+        //  tắt khi click bên ngoài
+        modal.addEventListener('click', CloseBuyTickets)
+            // ngừng nổi bọt
+            modalContainer.addEventListener('click', function (event){
+                event.stopPropagation()
+            }) //ngừng từ modalContainer
+            // function abc(event){
+            //     event.stopPropagation()
+            // }
+            // modalContainer.addEventListener('click', abc(event))
+    </Script>
 </body>
 </html>

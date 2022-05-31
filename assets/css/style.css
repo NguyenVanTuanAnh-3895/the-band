@@ -454,6 +454,145 @@ biết nhiều cách thì tăng khả năng ứng biến */
     background-color: #ccc;
 }
 /* end places */
+/* begin modal */
+
+/* điều chỉnh vị trí của toàn bộ thẻ modal che toàn bộ trang */
+.modal{
+    position: fixed;
+    /* adjust 4 huong */
+    /* với 4 huong = 0, khong can width/height
+    dã tuong quan voi cua so trinh duyet */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* -- */
+    background-color: rgba(0,0,0,0.5);
+    /* dieu chinh vi tri conten modal (can giua amn hinh*/
+    align-items: center;
+    justify-content: center; /*nằm giữa chiều ngang, google lại */
+    display: none; /* sửa giao diện, cần google bổ sung kiến thức */
+    /* nếu display=none sẽ ẩn cái modal này,flex lại hiện */
+
+}
+/* xử lý open modal = js */
+.modal.open{
+    display: flex;
+}
+
+.modal-container{
+    background-color: #fff;
+    width: 900px;
+    min-height: 200px;
+    /* đièu chỉnh position thẻ cha để điều chỉnh thẻ con nút X */
+    position: relative;
+    /* thêm thủ thuật để khi co nhỏ cửa sổ thì
+    content modal không bị dính vào màn hình */
+    max-width: calc(100% - 32px);
+    /* giải thích
+    ;max-width: tối đa bề ngang, sẽ bằng
+    chiều dài ban đầu của nó -32px, mỗi bên sẽ cách 32/2 =16px
+    nếu cửa sổ là 1000px: max là 968px
+    nếu cửa sổ là 200px, max sẽ là 168px */
+    animation: modalFadeIn ease 0.4s;
+
+}
+/* tạo keyframes cho animation */
+@keyframes modalFadeIn {
+    from{
+        opacity: 0;
+        transform:translateY(-170px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes modalFadeOut {
+    from{
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-170px);
+    }
+}
+.modal .modal-header{
+    background-color: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color:#fff;
+}
+
+.modal-heading-icon{
+    margin-right: 16px;
+}
+
+.modal-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* margin: 10px 10px 0 0; */
+    /* dung padding thay vi margin vì co khong gian de tuong tac voi phan tu
+    nut x luc này se co khong gian bam to hon */
+    padding: 12px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.modal-close:hover{
+    opacity: 1;
+    background-color: #ccc;
+    color: #000;
+}
+
+.modal-body{
+    padding: 16px;
+}
+
+.modal-label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.modal-input {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+#buy-tickets {
+    background-color: #009688;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 18px;
+    cursor: pointer;
+}
+
+#buy-tickets:hover {
+    opacity: 0.6;
+}
+
+.modal-footer{
+    text-align: right;
+    padding: 16px;
+}
+.modal-footer a{
+    color: #2196F3;
+}
+
+
+/* end modal */
+
+
 /* phần footer dưới cùng */
 #footer{
 
