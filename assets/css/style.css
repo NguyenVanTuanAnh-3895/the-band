@@ -9,31 +9,69 @@
    3. màu sắc
    4. kiểu dáng (kiểu chữ, hình tròn hình vuông... */
 
-/* Phần chung----------------------------------- */
-/* begin reset Universal CSS */
-/* ban đầu cho toàn bộ nguồn có padding và
-margin, box-sizing tự động tính toán kích thước */
+/* begin common */
+/* padding và sizing box */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
- /* tác động lên toàn bộ html font chữ */
+/* font cho toàn bộ trang */
 html{
-    font-family: Verdana,sans-seri;
+    font-family: Verdana, sans-serif ;
 }
-/* xem kỹ giải thích tại thẻ #conten .member-item
-có cả video */
+/* fix attribute float:left  */
 .clear{
     clear: both;
 }
+/* element HTML giả, sẽ tạo 1 element phía
+sau cùng của thẻ với các thuộc tính bên dưới */
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
 .text-white{
     color: #fff !important;
 }
-/* end reset Universal CSS */
+/* căn giữa chữ */
+.text-center{
+    text-align: center !important;
+}
+.mt-8{
+    margin-top: 8px !important;
+}
+.mt-16{
+    margin-top: 16px !important;
+}
+/* tụt hàng trái phải -8px */
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
 
-/* Begin: phần header -----------------------------------*/
+.col{
+        float: left;
+        padding-left: 8px;
+        padding-right: 8px;
+}
+/* căn đều 3 cột */
+.col-third{
+    width: 33.33333%;
+}
+/* căn đều 2 cột */
+.col-half{
+    width: 50%;
+}
+/* 1 cột chính giữa */
+.col-full{
+    width: 100%;
+}
 
+/* end common */
+
+/* begin header */
 /* đặt độ cao và màu cho thanh header */
 #header{
     height: 46.5px;
@@ -448,6 +486,7 @@ biết nhiều cách thì tăng khả năng ứng biến */
     padding: 10px 10px;
     display: inline-block;
     margin-top: 15px;
+    border: none;
 }
 .place-buy-btn:hover{
     color: #000;
@@ -479,7 +518,10 @@ biết nhiều cách thì tăng khả năng ứng biến */
 .modal.open{
     display: flex;
 }
-
+/* chế thêm fadeout mà chưa chạy */
+.modal.fade{
+    animation: modalFadeOut ease 0.4s;
+}
 .modal-container{
     background-color: #fff;
     width: 900px;
@@ -495,7 +537,6 @@ biết nhiều cách thì tăng khả năng ứng biến */
     nếu cửa sổ là 1000px: max là 968px
     nếu cửa sổ là 200px, max sẽ là 168px */
     animation: modalFadeIn ease 0.4s;
-
 }
 /* tạo keyframes cho animation */
 @keyframes modalFadeIn {
@@ -510,9 +551,11 @@ biết nhiều cách thì tăng khả năng ứng biến */
 }
 @keyframes modalFadeOut {
     from{
+        opacity: 1;
         transform: translateY(0);
     }
     to {
+        opacity: 0;
         transform: translateY(-170px);
     }
 }
@@ -588,10 +631,39 @@ biết nhiều cách thì tăng khả năng ứng biến */
 .modal-footer a{
     color: #2196F3;
 }
-
-
 /* end modal */
 
+/* begin contact form */
+.contact-content{
+    margin-top: 48px;
+}
+.contact-info{
+    font-style: 18px;
+    line-height: 1.5;
+}
+.contact-info i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+}
+.contact-form{
+    font-style: 15px;
+}
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    /* outline, đường biên bên ngoài ô input
+    cần google thêm */
+    outline: none;
+}
+.contact-form .form-submit-btn{
+    background: #000;
+    color: #fff;
+    float: right;
+    border: 1px solid #000;
+    padding: 11px 16px;
+}
+/* end contact form */
 
 /* phần footer dưới cùng */
 #footer{
