@@ -11,6 +11,7 @@
 <body>
     
     <div id="main">
+        <!-- begin: Header -->
         <div id="header">
             <!-- begin: NAV -->
             <ul id="nav">
@@ -37,9 +38,9 @@
             <!-- end search button -->
 
         </div>
-
-        
-        <!-- Begin Slider -->
+        <!-- End: Header -->
+        <!------------------------------------------>
+        <!-- Begin: Slider -->
         <div id="slider">
             <div class="text-content">
                 <h2 class="text-heading"> New York</h2>
@@ -47,11 +48,11 @@
             </div>
 
         </div>
-        <!-- End Slider -->
-
-
+        <!-- End: Slider -->
+        <!------------------------------------------>
         <div id="content">
-            <!-- begin About -->
+            <!------------------------------------------>
+            <!-- begin: About -->
             <div class="content-selection">
                 <h2 class="selection-heading">THE BAND</h2>
                 <p class="selection-sub-heading">We love music</p>
@@ -76,11 +77,10 @@
                 </div>
             <!-- thẻ contecnt-selection ôm cả member-list để member-list kế thừa lại các đặc tính đã cài cho content-selection, giúp nội dung hiển thị theo ý muốn (giới hạn bên trong content-selection) -->
             </div>
-
-            <!-- end member -->
+            <!-- end: member -->
             <!-- end About -->
-
-           <!-- begin tour -->
+            <!------------------------------------------>
+            <!-- begin tour -->
             <div class="tour-section">
                 <div class="content-selection">
                     <h2 class="selection-heading text-white">TOUR DATES</h2>
@@ -99,7 +99,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <button class="btn place-buy-btn js-buy-ticket">Buy Tickets</button>
+                                <button class="btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
@@ -108,7 +108,7 @@
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <button class="btn place-buy-btn js-buy-ticket">Buy Tickets</button>
+                                <button class="btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
@@ -117,7 +117,7 @@
                                 <h3 class="place-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
-                                <button class="btn place-buy-btn js-buy-ticket">Buy Tickets</button>
+                                <button class="btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -126,6 +126,7 @@
                 </div>
             </div>
             <!-- end tour -->
+            <!------------------------------------------>
             <!-- begin contact -->
             <div class="content-selection">
                 <h2 class="selection-heading">CONTACT</h2>
@@ -151,18 +152,41 @@
                                     <input type="text" placeholder="Message" required name="" id="" class="form-control">
                                 </div>
                             </div>
-                            <input class="form-submit-btn mt-16" type="submit" value="SEND">
+                            <input class="pull-right btn mt-16" type="submit" value="SEND">
                         </form>
                     </div>
                 </div>
             </div>
             <!-- end contact -->
+            <!------------------------------------------>
+            <div class="map-section">
+                <img src="/assets/img/map.jpg" alt="map">
+            </div>
         </div>
 
         <div id="footer">
-
+            <!-- <div class="">
+                <ul>
+                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                    <li><a href="#"><i class="ti-instagram"></i></a></li>
+                    <li><a href="#"><i class="ti-youtube"></i></a></li>
+                    <li><a href="#"><i class="ti-skype"></i></a></li>
+                    <li><a href="#"><i class="ti-twitter"></i></a></li>
+                    <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                </ul>
+            </div> -->
+            <div class="socials-list">
+                <a href=""><i class="ti-facebook"></i></a>
+                <a href=""><i class="ti-instagram"></i></a>
+                <a href=""><i class="ti-youtube"></i></a>
+                <a href=""><i class="ti-skype"></i></a>
+                <a href=""><i class="ti-twitter"></i></a>
+                <a href=""><i class="ti-linkedin"></i></a>
+            </div>
+            <p class="copyright">Powered by <a href="https://www.w3schools.com/w3css/default.asp">w3.css</a></p>
         </div>
     </div>
+    <!------------------------------------------>
     <!-- begin modal -->
     <div class="modal js-modal">
         <div class="modal-container js-modal-container">
@@ -206,6 +230,7 @@
         </div>
     </div>
     <!-- end modal -->
+    <!------------------------------------------>
     <!-- begin JS modal -->
     <Script>
         // tạo 1 hằng với tên là buyBtns ("s" biểu thị cho số nhiều, lấy cả 3 nút) document: đại diện cho trang web, muốn lấy nội dung nào đều / phải đi qua docu /querySelectorALL: lấy tất cả các class trùng với class mà // truyền vào đây ()

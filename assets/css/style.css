@@ -45,6 +45,24 @@ sau cùng của thẻ với các thuộc tính bên dưới */
 .mt-16{
     margin-top: 16px !important;
 }
+/* pull: kéo; pull right: kéo sang phải*/
+.pull-right{
+    float: right !important;
+}
+.btn{
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 10px 10px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+}
+.btn:hover{
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
 /* tụt hàng trái phải -8px */
 .row{
     margin-left: -8px;
@@ -279,9 +297,7 @@ biết nhiều cách thì tăng khả năng ứng biến */
 
 
 /* begin content------------------------------- */
-#content{
 
-}
 /* begin about----------------------------- */
 /* begin about-selection--------------------- */
 .content-selection{
@@ -291,7 +307,7 @@ biết nhiều cách thì tăng khả năng ứng biến */
     margin-left: auto;
     margin-right: auto;
     /* đẩy padding khối này trên dưới 64px */
-    padding: 64px 0;
+    padding: 64px 0 112px;
 }
 
 #content .selection-heading{
@@ -479,19 +495,6 @@ biết nhiều cách thì tăng khả năng ứng biến */
     line-height: 1.4;
 }
 
-.place-buy-btn{
-    color: #fff;
-    background-color: #000;
-    text-decoration: none;
-    padding: 10px 10px;
-    display: inline-block;
-    margin-top: 15px;
-    border: none;
-}
-.place-buy-btn:hover{
-    color: #000;
-    background-color: #ccc;
-}
 /* end places */
 /* begin modal */
 
@@ -656,16 +659,36 @@ biết nhiều cách thì tăng khả năng ứng biến */
     cần google thêm */
     outline: none;
 }
-.contact-form .form-submit-btn{
-    background: #000;
-    color: #fff;
-    float: right;
-    border: 1px solid #000;
-    padding: 11px 16px;
+/* Begin: Map Section */
+
+/* End: Map Section */
+.map-section img{
+    width: 100%;
 }
 /* end contact form */
 
 /* phần footer dưới cùng */
 #footer{
-
+    padding: 64px 16px;
+    text-align: center;
+}
+#footer .socials-list{
+    font-size: 24px;
+    color: #000;
+}
+#footer .socials-list a{
+    text-decoration: none;
+    color: rgba(0,0,0,0.6);
+}
+#footer .copyright a:hover,
+#footer .socials-list a:hover{
+    opacity: 0.6;
+}
+#footer .copyright{
+    margin: 15px 0;
+    font-size: 15px;
+    color: rgba(0,0,0,0.8);
+}
+#footer .copyright a{
+    color: rgba(0,0,0,0.8);
 }
