@@ -246,7 +246,7 @@ về bên phải,
     background-size: cover; 
     tất cả thuộc tính trên được thay thế
     bằng 1 thuộc tính dưới*/
-    background: url('/assets/img/slider/slider1.jpg') top center / cover no-repeat;
+    background: url('./assets/img/slider/slider1.jpg') top center / cover no-repeat;
     position: relative;
 }
 
