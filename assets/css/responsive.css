@@ -1,0 +1,45 @@
+/* PC */
+@media (min-width: 1024px){
+    .pc{
+        display:block;
+    }
+}
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    .tablet{
+        display:block;
+    }
+}
+/* mobile */
+@media (max-width: 740px){
+    
+    #nav{
+        display: block;
+    }
+    #nav > li {
+        display: block;
+    }
+    #nav > li:first-child{
+        display: inline-block;
+    }
+    #nav .subnav{
+        /* initial: reset về giá trị mặc định của subnav
+        bỏ đi absolute và về là static:Các phần tử hiển thị theo thứ tự,
+        tham khảo: https://www.w3schools.com/cssref/pr_class_position.asp */
+        position: initial;
+        background-color: #333;
+    }
+    #nav .subnav a{
+        color: #fff;
+        padding: 5px 45px;
+    }
+    #header{
+        overflow: hidden;
+    }
+    #header .mobile-menu-btn{
+        display: block;
+    }
+    #header .search-btn {
+        display: none;
+    }
+}

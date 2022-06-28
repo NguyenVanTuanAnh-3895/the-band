@@ -112,6 +112,9 @@ sau cùng của thẻ với các thuộc tính bên dưới */
     cho tới khi nào lớp mà ta muốn nổi hoặc
     chìm tùy ý */
     z-index: 1;
+    /* overflow: hidden; */
+
+
 }
 #nav{
     /* vì thẻ ul của nav là block
@@ -173,6 +176,7 @@ hover:
 /* hover vào li mà li ấy lại chứa con .subnav */
 #nav li:hover .subnav{
     display: block;
+    animation: modalFadeIn ease 0.4s;
 }
 
 /* tạm ẩn thẻ trong subnav, xử lý nav trước */
@@ -207,22 +211,36 @@ về bên phải,
 - do font-search nhỏ nên tăng line-height
 - padding 2 bên font cho icon tách ra cho dề nhìn 
 */
+#header .mobile-menu-btn,
 #header .search-btn{
     float: right;
     line-height: 46.5px;
     padding: 0 12.8px;
 }
 
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .menu-icon,
 #header .search-icon{
     color: #fff;
     font-size: 20px;
 }
-
 #header .search-btn:hover{
     color: #fff;
     background-color:#f44336;
     cursor: pointer; /*thay đổi cuisor thành hình bàn tay khi di vào
     vì nguyên tắc nút search phải bấm được */
+}
+#header .mobile-menu-btn:hover{
+    background-color:#ccc;
+}
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
 }
 /* End phần header------------------------ */
 
@@ -246,7 +264,7 @@ về bên phải,
     background-size: cover; 
     tất cả thuộc tính trên được thay thế
     bằng 1 thuộc tính dưới*/
-    background: url('./assets/img/slider/slider1.jpg') top center / cover no-repeat;
+    background: url('/assets/img/slider/slider1.jpg') top center / cover no-repeat;
     position: relative;
 }
 
@@ -300,14 +318,17 @@ biết nhiều cách thì tăng khả năng ứng biến */
 
 /* begin about----------------------------- */
 /* begin about-selection--------------------- */
-.content-selection{
+#content .content-selection{
     /* đặt chiều cao là 800px theo gốc cả nội dung trong content-selection */
     width: 800px; 
+    max-width: 100%; /* fix độ rộng của content-section nếu nhỏ hơn 800px*/
     /* đẩy sang trái/phải 1 khoảng auto cho nội dung chính giữa */
     margin-left: auto;
     margin-right: auto;
     /* đẩy padding khối này trên dưới 64px */
     padding: 64px 0 112px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .selection-heading{
@@ -453,7 +474,11 @@ biết nhiều cách thì tăng khả năng ứng biến */
     /* padding-top: 32px; */
     /* margin-left: -8px;
     margin-right: -8px; */
-    margin: 32px -8px 48px;
+    /* margin: 32px -8px 48px; */
+    margin-top: 32px;
+    margin-right: -8px;
+    margin-left: -8px;
+    margin-bottom: 48px;
 
 }
 
