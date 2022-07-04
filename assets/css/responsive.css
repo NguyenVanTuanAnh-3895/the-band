@@ -12,7 +12,13 @@
 }
 /* mobile */
 @media (max-width: 740px){
-    
+    .s-full-width,
+    .s-col-full{
+        width: 100%;
+    }
+    .s-mt-8{
+        margin-top: 8px;
+    }
     #nav{
         display: block;
     }
@@ -41,5 +47,15 @@
     }
     #header .search-btn {
         display: none;
+    }
+    #content .member-item{
+        margin-top: 30px;
+        width: 100%;
+    }
+    #content .member-img{
+        width: 60%;
+    }
+    .contact-form{
+        margin-top: 16px;
     }
 }

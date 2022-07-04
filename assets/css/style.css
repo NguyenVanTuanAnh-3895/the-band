@@ -18,6 +18,7 @@
 }
 /* font cho toàn bộ trang */
 html{
+    scroll-behavior: smooth;
     font-family: Verdana, sans-serif ;
 }
 /* fix attribute float:left  */
@@ -45,10 +46,14 @@ sau cùng của thẻ với các thuộc tính bên dưới */
 .mt-16{
     margin-top: 16px !important;
 }
+.mt-32{
+    margin-top: 32px !important;
+}
 /* pull: kéo; pull right: kéo sang phải*/
 .pull-right{
     float: right !important;
 }
+
 .btn{
     color: #fff;
     background-color: #000;
@@ -57,6 +62,8 @@ sau cùng của thẻ với các thuộc tính bên dưới */
     display: inline-block;
     margin-top: 15px;
     border: none;
+    -webkit-appearance: none;
+
 }
 .btn:hover{
     color: #000;
@@ -484,7 +491,7 @@ biết nhiều cách thì tăng khả năng ứng biến */
 
 .place-item{
     float: left;
-    width: 33.3333%;
+    /* width: 33.3333%; */
     padding: 0 8px;
 
 }
